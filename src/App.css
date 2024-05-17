@@ -24,10 +24,6 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -37,56 +33,16 @@
   }
 }
 
-.login-page {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
+.custom-container {
+  background-color: #282c34;
 }
 
-.login-title {
-  margin-bottom: 20px;
+.custom-button {
+  background-color: #08f608;
+  color: white;
 }
 
-.login-form {
-  background-color: dimgray;
-  border-radius: 8px;
-  padding: 20px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  width: 300px;
+.custom-textfield {
+  border-color: green !important;
 }
 
-.login-form .form-group {
-  margin-bottom: 15px;
-  margin-top: 20px;
-  margin-right: 20px;
-}
-
-.login-form label {
-  display: block;
-  font-weight: bold;
-}
-
-.login-form input[type="text"],
-.login-form input[type="password"] {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-.login-form button[type="submit"] {
-  width: 100%;
-  padding: 10px;
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.login-form button[type="submit"]:hover {
-  background-color: #0056b3;
-}
