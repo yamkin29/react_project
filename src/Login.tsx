@@ -1,6 +1,5 @@
 import React from 'react';
 import { Container, Typography, TextField, Button } from '@mui/material';
-import './App.css';
 
 function Login() {
     return (
@@ -15,7 +14,6 @@ function Login() {
                     label="Имя пользователя"
                     fullWidth
                     margin="normal"
-                    className="custom-textfield"
                 />
                 <TextField
                     id="password"
