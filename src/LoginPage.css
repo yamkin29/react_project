@@ -1,0 +1,28 @@
+.custom-button {
+    background-color: green !important;
+    color: white;
+    height: 56px !important;
+    margin-top: 15px !important;
+}
+
+.custom-button:hover {
+    background-color: darkgreen !important;
+}
+
+.custom-input {
+    height: 56px !important;
+    /*border: 2px solid grey !important;*/
+}
+
+.custom-input:focus,
+.custom-input:hover,
+.custom-input:active {
+    border-color: green !important;
+}
+
+.custom-container {
+    padding: 80px;
+    background-color: #474747;
+    border-radius: 10px;
+    border: 2px solid green;
+}

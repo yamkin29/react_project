@@ -1,15 +1,22 @@
-import React, { Component } from 'react';
+import React from 'react';
+import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import './App.css';
-import Login from './Login';
+import LoginPage from './LoginPage';
+import MainPage from './MainPage';
 
-class App extends Component {
+class App extends React.Component {
     render() {
         return (
-            <div className="App">
-                <header className="App-header">
-                    <Login />
-                </header>
-            </div>
+            <Router>
+                <div className="App">
+                    <header className="App-header">
+                        <Routes>
+                            <Route path="/" element={<LoginPage/>}/>
+                            <Route path="/MainPage" element={<MainPage/>}/>
+                        </Routes>
+                    </header>
+                </div>
+            </Router>
         );
     }
 }
