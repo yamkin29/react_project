@@ -1,9 +1,9 @@
 import React from 'react';
 
-function MainPage() {
+function MainPage(): React.ReactElement{
     return (
         <div>
-            <h1>Основная страница</h1>
+            <h5 className="title">Главная страница</h5>
             {
 
             }

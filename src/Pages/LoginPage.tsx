@@ -12,6 +12,8 @@ const LoginPage: React.FC = () => {
     const [formData, setFormData] = useState<FormData>({ username: "", password: "" });
     const navigate = useNavigate();
     const [error, setError] = useState<string>("");
+    const [usernameError, setUsernameError] = useState<string>("");
+    const [passwordError, setPasswordError] = useState<string>("");
 
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         const {name, value} = event.target;
@@ -19,6 +21,12 @@ const LoginPage: React.FC = () => {
             ...prevState,
             [name]: value
         }));
+
+        if (name === "username") {
+            setUsernameError("");
+        } else if (name === "password") {
+            setPasswordError("");
+        }
     }
 
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
@@ -30,7 +38,21 @@ const LoginPage: React.FC = () => {
             type: 0
         };
 
-        if (!formData.username ||!formData.password) {
+        if (!formData.username && !formData.password) {
+            setError("Пожалуйста, заполните все поля");
+            setUsernameError("Пожалуйста, заполните все поля");
+            setPasswordError("Пожалуйста, заполните все поля");
+            return;
+        }
+
+        if (!formData.username) {
+            setUsernameError("Пожалуйста, заполните все поля");
+            setError("Пожалуйста, заполните все поля");
+            return;
+        }
+
+        if (!formData.password) {
+            setPasswordError("Пожалуйста, заполните все поля");
             setError("Пожалуйста, заполните все поля");
             return;
         }
@@ -135,12 +157,15 @@ const LoginPage: React.FC = () => {
 
     return (
         <Container maxWidth="xs" className="custom-container">
+            <div className="custom-icon">
+                <img src="/Images/app.ico" alt="Description"></img>
+            </div>
             <Typography variant="h4" gutterBottom>
-                Авторизация
+                Вход в систему
             </Typography>
             <form noValidate autoComplete="off" onSubmit={handleSubmit}>
                 <TextField
-                    className="custom-input"
+                    className={"custom-input" + (usernameError ? " error" : "")}
                     id="username"
                     name="username"
                     label="Имя пользователя"
@@ -150,7 +175,7 @@ const LoginPage: React.FC = () => {
                     onChange={handleChange}
                 />
                 <TextField
-                    className="custom-input"
+                    className={"custom-input" + (passwordError ? " error" : "")}
                     id="password"
                     name="password"
                     label="Пароль"
@@ -163,7 +188,7 @@ const LoginPage: React.FC = () => {
                 <Button type="submit" variant="contained" fullWidth className="custom-button">
                     Войти
                 </Button>
-                {error && <Typography variant="body2" color="error">{error}</Typography>}
+                {error && <Typography variant="body2" color="error" className="error-message">{error}</Typography>}
             </form>
         </Container>
     );
