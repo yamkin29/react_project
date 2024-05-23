@@ -11,12 +11,18 @@
 
 .custom-input {
     height: 56px !important;
-    /*border: 2px solid grey !important;*/
+    border: 2px solid green !important;
 }
 
-.custom-input:focus,
-.custom-input:hover,
-.custom-input:active {
+.MuiFormLabel-root {
+    color: green !important;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-size: 50px;
+}
+
+.MuiFormLabel-root:focus,
+.MuiFormLabel-root:hover,
+.MuiFormLabel-root:active {
     border-color: green !important;
 }
 
