@@ -1,14 +1,15 @@
-import React from 'react';
+import React, {FC, ReactNode} from 'react';
+import ContextMenu from "../Components/ContextMenu";
 
-function MainPage(): React.ReactElement{
-    return (
-        <div>
-            <h5 className="title">Главная страница</h5>
-            {
-
-            }
-        </div>
-    );
+interface MainPageProps{
+    width?: number;
+    children?: ReactNode;
 }
+
+const MainPage: FC<MainPageProps> = () => {
+    return (
+        <ContextMenu></ContextMenu>
+    );
+};
 
 export default MainPage;
